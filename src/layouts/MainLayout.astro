@@ -1,0 +1,58 @@
+---
+const { title } = Astro.props;
+import "../styles/global.css";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="genreator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <nav class="bg-slate-700 mb-10">
+      <div
+        class="container flex flex-wrap items-center justify-between mx-auto"
+      >
+        <div class="w-full">
+          <ul class="flex p-4 mt-4 justify-around text-lg">
+            <li>
+              <a href="/" class="text-white hover:text-orange-400">Home</a>
+            </li>
+            <li>
+              <a href="/about" class="text-white hover:text-orange-400">About</a
+              >
+            </li>
+            <li>
+              <a href="/hobbies" class="text-white hover:text-orange-400"
+                >Hobbies</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <h1 class="text-4xl mb-10">{title}</h1>
+    <slot />
+    <footer class="p-4 bg-slate-700 flex justify-between mt-20">
+      <span class="text-white"
+        >© 2022 <a href="https://www.ceos3c.com" class="hover:underline"
+          >Ceos3c</a
+        >. All Rights Reserved.
+      </span>
+      <ul class="flex flex-wrap items-center gap-x-5 text-white h-20">
+        <li>
+          <a href="#" class="hover:underline">About</a>
+        </li>
+        <li>
+          <a href="#" class="hover:underline">Privacy Policy</a>
+        </li>
+        <li>
+          <a href="#" class="hover:underline">Contact</a>
+        </li>
+      </ul>
+    </footer>
+  </body>
+</html>
